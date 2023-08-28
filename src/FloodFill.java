@@ -34,28 +34,4 @@ public class FloodFill {
             fila.enqueue(x * cols + (y + 1)); // Right
         }
     }
-
-    public static void main(String[] args) {
-        int[][] image = {
-                {1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-                {1, 1, 1, 1, 1, 1, 1, 1, 0, 1},
-                {1, 1, 1, 1, 1, 1, 1, 0, 1, 1},
-                {1, 1, 1, 1, 1, 1, 0, 1, 1, 1},
-                {1, 1, 1, 1, 1, 0, 1, 1, 1, 1},
-                {1, 1, 1, 1, 0, 1, 1, 1, 1, 1},
-                {1, 1, 1, 0, 1, 1, 1, 1, 1, 1},
-                {1, 1, 0, 1, 1, 1, 1, 1, 1, 1},
-                {1, 0, 1, 1, 1, 1, 1, 1, 1, 1},
-                {0, 1, 1, 1, 1, 1, 1, 1, 1, 1}
-        };
-
-        int startX = 7;
-        int startY = 8;
-
-        floodFill(image, startX, startY);
-
-        for (int[] row : image) {
-            System.out.println(Arrays.toString(row));
-        }
-    }
 }
