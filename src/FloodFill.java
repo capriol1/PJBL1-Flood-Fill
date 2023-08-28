@@ -20,7 +20,6 @@ public class FloodFill {
             int pixel = queue.dequeue();
             int x = pixel / cols;
             int y = pixel % cols;
-            (row < 0 || row >= numRows || col < 0 || col >= numCols || image.getPixel(row, col) != oldValue)
             if (x < 0 || y < 0 || x >= rows  || y >= cols || image[x][y] != targetColor) {
                 continue;
             }
@@ -29,7 +28,9 @@ public class FloodFill {
 
             queue.enqueue((x - 1) * cols + y); // Up
             queue.enqueue((x + 1) * cols + y); // Down
-            queue.enqueue(x * cols + (y - 1)); // Left
+            if (y != 0) {
+                queue.enqueue(x * cols + (y - 1)); // Left
+            }
             queue.enqueue(x * cols + (y + 1)); // Right
         }
     }
