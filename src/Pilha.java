@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
-public class Stack<T> {
+public class Pilha<T> {
     private ArrayList<T> stack;
     private int top;
     private int size;
 
     /* o método construtor recebe como parâmetro o tamanho da pilha e inicializa os atributos size,
      top e stack. Ele cria um novo objeto ArrayList<T> com o tamanho especificado. */
-    public Stack(int size) {
+    public Pilha(int size) {
         this.size = size;
         this.top = -1;
         this.stack = new ArrayList<T>(size);

@@ -13,11 +13,11 @@ public class FloodFill {
             return;
         }
 
-        Queue<Integer> queue = new Queue<>(rows * cols);
-        queue.enqueue(startX * cols + startY);
+        Fila<Integer> fila = new Fila<>(rows * cols);
+        fila.enqueue(startX * cols + startY);
 
-        while (!queue.isEmpty()) {
-            int pixel = queue.dequeue();
+        while (!fila.isEmpty()) {
+            int pixel = fila.dequeue();
             int x = pixel / cols;
             int y = pixel % cols;
             if (x < 0 || y < 0 || x >= rows  || y >= cols || image[x][y] != targetColor) {
@@ -26,12 +26,12 @@ public class FloodFill {
 
             image[x][y] = NEW_COLOR;
 
-            queue.enqueue((x - 1) * cols + y); // Up
-            queue.enqueue((x + 1) * cols + y); // Down
+            fila.enqueue((x - 1) * cols + y); // Up
+            fila.enqueue((x + 1) * cols + y); // Down
             if (y != 0) {
-                queue.enqueue(x * cols + (y - 1)); // Left
+                fila.enqueue(x * cols + (y - 1)); // Left
             }
-            queue.enqueue(x * cols + (y + 1)); // Right
+            fila.enqueue(x * cols + (y + 1)); // Right
         }
     }
 
@@ -49,8 +49,8 @@ public class FloodFill {
                 {0, 1, 1, 1, 1, 1, 1, 1, 1, 1}
         };
 
-        int startX = 1;
-        int startY = 2;
+        int startX = 7;
+        int startY = 8;
 
         floodFill(image, startX, startY);
 

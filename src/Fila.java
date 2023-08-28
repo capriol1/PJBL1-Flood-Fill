@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 //a fila possui duas posições, front e end, que representam o início e o fim da fila, respectivamente.
-public class Queue<T> {
+public class Fila<T> {
     private ArrayList<T> queue;
     private int front;
     private int end;
@@ -10,7 +10,7 @@ public class Queue<T> {
     /* o método construtor recebe como parâmetro o tamanho da fila e inicializa os atributos size,
     front, end e stack. Ele cria um novo objeto ArrayList<T> com o tamanho especificado.
      */
-    public Queue(int size) {
+    public Fila(int size) {
         this.size = size;
         this.front = -1;
         this.end = -1;
